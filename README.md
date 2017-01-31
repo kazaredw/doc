@@ -1,2 +1,2 @@
 # doc
-# Мой конспект ruby
+# python
