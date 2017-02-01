@@ -12,4 +12,12 @@ def vivod_all():
 
 def insert_phbook():
     cur = conn.cursor()
-    cur.execute('insert ')
+    cur.execute("insert into phbook (person, post, phone) values ('Алекс Иванов', 'специалсит', '345-90-48' )")
+    conn.commit()
+    print "Запись сделанна"
+    conn.close()
+
+#insert_phbook()
+print "+++++++++++++++++++++++++++++"
+vivod_all()
+
