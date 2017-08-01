@@ -1,0 +1,35 @@
+посмотреть список установленных модулей ы системе python -c “help('modules')”
+
+python manage.py validate проверка корреткности модели
+
+python manage.py sqlall books выводит sql код модели
+
+python manage.py syncdb синхронизация бд
+
+python manage.py shell вывод консоли
+
+python manage.py startapp name создание приложения
+
+
+
+создание блога на джанго
+1) django-admin startproject mysite
+2) ./manage.py startapp blog
+3) правим файл с настройками, добавить в INSTALLED_APPS имя приложения 'mysite.blog'
+4) создаем модель
+
+from django.db import models
+from django.contrib import admin  - добавляем для правки в админе
+
+# Create your models here.
+class BlogPost(models.Model):
+    title=models.CharField(max_length=150)
+    body=models.TextField()
+    timestamp=models.DateTimeField()
+    
+class BlogPostAdmin(admin.ModelAdmin): - правим вывод в админке   
+    list_display=('title', 'timestamp')
+
+
+admin.site.register(BlogPost, BlogPostAdmin) -добавляем для правки в админе
+
