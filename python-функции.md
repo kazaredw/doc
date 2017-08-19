@@ -1,4 +1,5 @@
 # doc
+вывод словаря
 def func (**args):
 	return args
 
