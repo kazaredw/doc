@@ -33,3 +33,7 @@ class BlogPostAdmin(admin.ModelAdmin): - правим вывод в админк
 
 admin.site.register(BlogPost, BlogPostAdmin) -добавляем для правки в админе
 
+python ./manage.py shell
+Цепляем модель
+from НазваниеПроекта.НазваниеПриложения.models import НазваниеМодели
+from spisok.all.models import Sotrudniki
