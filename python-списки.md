@@ -26,3 +26,4 @@ min(spisok), max(spisok), sum(spisok)
 
 Генератор списка
 squares = [value**2 for value in range(1,11)]
+4
