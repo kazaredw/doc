@@ -26,4 +26,7 @@ min(spisok), max(spisok), sum(spisok)
 
 Генератор списка
 squares = [value**2 for value in range(1,11)]
-4
+
+Проверка значения в списке
+if user not in banned_users:
+  print(user.title() + ", you can post a response if you wish.")
