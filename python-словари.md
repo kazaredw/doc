@@ -17,3 +17,9 @@ dict.values() - возвращает значения в словаре.
 dict.clear() - очищает словарь.
 
 dict.copy() - возвращает копию словаря.
+
+Перебор элементов словаря
+slovar={'username': 'sergo', 'dol': 'spesial', 'tel': '2323',}
+for key, value in slovar.items():
+    print("\n"+key)
+    print(value)
