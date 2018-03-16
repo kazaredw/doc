@@ -53,20 +53,21 @@ con = fdb.connect(
 cur = con.cursor()  
 f = open('C:\install\work\gm.txt', 'r')
 SpisokGmSergo = [line.strip() for line in f]
-try:
-    with open("itog.csv", "w") as file:
-        file.write('ip;code;name;count\n')     
-    for i in SpisokGmSergo:
-        cur.execute("select ip_gm.lan_ip, gms.code, gms.namegm from ip_GM, gms where ip_GM.id=gms.id and gms.filial_id is not null and gms.code='%s'" % i)
-        for row in cur:
-            #print(row[0]+' '+row[1]+' '+row[2])
-            ssh.connect(row[0], username='root', password='stenosis')
-            stdin,stdout,stderr=ssh.exec_command("ls -ldt /var/db/salepoint/transact/* |wc -l")
-            result=str(stdout.readlines()[0])
-            s=row[0]+';'+row[1]+';'+row[2]+';'+result
-            print (s)
-            with open("itog.csv", "a") as file:
-                file.write('%s\n' % s)
-except Exception as u:
-    print(u)
-        
+
+with open(r"\\10.5.5.16\share\itog.csv", "w") as file:
+    file.write('ip;code;name;count\n')     
+for i in SpisokGmSergo:
+    cur.execute("select ip_gm.lan_ip, gms.code, gms.namegm from ip_GM, gms where ip_GM.id=gms.id and gms.filial_id is not null and gms.code='%s'" % i)
+    for row in cur:
+        try:
+                #print(row[0]+' '+row[1]+' '+row[2])
+                ssh.connect(row[0], username='root', password='stenosis')
+                stdin,stdout,stderr=ssh.exec_command("ls -ldt /var/db/salepoint/transact/* |wc -l")
+                result=str(stdout.readlines()[0])
+                s=row[0]+';'+row[1]+';'+row[2]+';'+result
+                print (s)
+                with open(r"\\10.5.5.16\share\itog.csv", "a") as file:
+                    file.write('%s' % s)
+        except Exception as u:
+            print(u)
+
