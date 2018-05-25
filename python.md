@@ -5,6 +5,11 @@ http://www.w3ii.com/ru/postgresql/postgresql_python.html psycopg2
 
 http://initd.org/psycopg/docs/usage.html#lists-adaptation psycopg2
 
+Удаление исходников в python https://alex.semyonov.us/2009/08/03/setup-py-uninstall.html
+удаление пример
+sudo python setup.py install --record files.txt
+cat files.txt | sudo xargs rm -rf
+
 
 Состав программы 
 1) Программы делятся на модули
