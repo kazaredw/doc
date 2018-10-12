@@ -39,19 +39,6 @@ s[1:3] срез строки S начиная с 1 до 3, не включая 3
 dir(Обьект) возвращает все методы обьекта
 
 
-
-fetchall() возвращает список (на самом деле: кортеж) кортежей
-fetchone() одна строка
-
-# Use fetchall():
-((points,),) = cursor.fetchall()  # points = 56L
-
-# Or, if you use fetchone():
-(points,) = cursor.fetchone()     # points = 56L
-
-
-
-
 Для выполнения задания необходимо знать:
 not - это знак минуса (-) или просто запомнить, что not меняет значение на противоположное
 and - это умножение (*)
@@ -94,3 +81,11 @@ for параметр in последовательность:
 
 
 
+fetchall() возвращает список (на самом деле: кортеж) кортежей
+fetchone() одна строка
+
+# Use fetchall():
+((points,),) = cursor.fetchall()  # points = 56L
+
+# Or, if you use fetchone():
+(points,) = cursor.fetchone()     # points = 56L
